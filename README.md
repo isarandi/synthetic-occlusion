@@ -9,17 +9,33 @@ This is the implementation we used for our IROS'18 workshop paper [1], and to ac
 Contact: sarandi@vision.rwth-aachen.de
 
 ## Usage
-0. Make sure Python 3, Numpy, OpenCV 3 and Pillow are installed.
-1. Download and extract the Pascal VOC training/validation data from http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit
-2. Use the `SyntheticOcclusion` class as in the `augmentation.show_examples` function. In short:
+0. Make sure you have installed Python 3, the scientific Python stack, OpenCV and Pillow.
+1. Clone the repo.
+2. Download and extract the Pascal VOC training/validation data (2 GB) from http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit
+3. Test if it works.
 
-```python
+All this in terminal commands:
 
-original_im = cv2.resize(skimage.data.astronaut(), (256,256))
+```bash
+git clone https://github.com/isarandi/synthetic-occlusion.git
+cd synthetic-occlusion
 
-synth_occ = SyntheticOcclusion(pascal_voc_root_path=PATH_TO_THE_EXTRACTED_VOC2012_DIR)
-occluded_im = synth_occ.augment_with_objects(original_im)
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
+tar -xf VOCtrainval_11-May-2012.tar
+
+./augmentation.py "VOCdevkit/VOC2012"
 ```
+
+4. Use the `SyntheticOcclusion` class as follows:
+
+```python 
+synth_occ = SyntheticOcclusion(pascal_voc_root_path=PATH_TO_THE_EXTRACTED_VOC2012_DIR)
+
+# Load your image
+original_im = np.random.randint(0,255, size=(256,256,3), dtype=np.uint8)
+occluded_im = synth_occ.augment_with_objects(im)
+```
+
 
 ## References
 
