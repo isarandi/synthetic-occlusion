@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import xml.etree.ElementTree
 import cv2
 import PIL.Image
@@ -12,7 +14,7 @@ import sys
 def show_examples():
     path = sys.argv[1]
     # path = 'something/something/VOCtrainval_11-May-2012/VOCdevkit/VOC2012'
-    
+
     synth_occ = SyntheticOcclusion(pascal_voc_root_path=path)
     original_im = cv2.resize(skimage.data.astronaut(), (256,256))
 
@@ -32,6 +34,7 @@ class SyntheticOcclusion:
         self.occluder_image_mask_pairs = []
 
         annotation_paths = list_filepaths(os.path.join(pascal_voc_root_path, 'Annotations'))
+        print('Processing occluders from Pascal VOC dataset...')
         for annotation_path in annotation_paths:
             xml_root = xml.etree.ElementTree.parse(annotation_path).getroot()
             is_segmented = (xml_root.find('segmented').text != '0')
@@ -73,15 +76,17 @@ class SyntheticOcclusion:
                 object_image = resize_by_factor(object_image, downscale_factor)
                 object_mask = resize_by_factor(object_mask, downscale_factor)
                 self.occluder_image_mask_pairs.append((object_image, object_mask))
-                
+
         # It makes sense to save `self.occluder_image_mask_pairs` on disk,
         # e.g., using pickle, to avoid recomputing it every time.
-                
+        print('Got {} objects after filtering.'.format(len(self.occluder_image_mask_pairs)))
+
+
     def augment_with_objects(self, im):
         """Returns an augmented version of `im`, containing occluders from the Pascal VOC dataset."""
-        
+
         result = im.copy()
-        
+
         width_height = np.asarray([im.shape[1], im.shape[0]])
         factor = min(width_height) / 256
         count = np.random.randint(1, 8)
@@ -92,17 +97,17 @@ class SyntheticOcclusion:
             rescale_factor = np.random.uniform(0.2, 1.0) * factor
             occ_im = resize_by_factor(occ_im, rescale_factor)
             occ_mask = resize_by_factor(occ_mask, rescale_factor)
-            
+
             center = np.random.uniform([0,0], width_height)
             paste_over(occ_im, result, occ_mask, center)
 
         return result
-    
+
 
 def paste_over(im_src, im_dst, alpha, center):
     """Pastes `im_src` onto `im_dst` at a specified position, with alpha blending, in place.
 
-    Locations outside the bounds of `im_dst` are handled as expected (only a part or none of 
+    Locations outside the bounds of `im_dst` are handled as expected (only a part or none of
     `im_src` becomes visible).
 
     Args:
@@ -135,7 +140,7 @@ def paste_over(im_src, im_dst, alpha, center):
     im_dst[start_dst[1]:end_dst[1], start_dst[0]:end_dst[0]] = (
             alpha * region_src + (1 - alpha) * region_dst)
 
-    
+
 def resize_by_factor(im, factor):
     """Returns a copy of `im` resized by `factor`, using bilinear interp for up and area interp
     for downscaling.
@@ -148,13 +153,13 @@ def resize_by_factor(im, factor):
 def soften_mask_border(mask):
     """Returns a new mask, where the opacity value on an 8 pixel stripe along the mask border
     has 0.75 value.
-    
+
     This is indended to make blending smoother."""
-    
+
     eroded = cv2.erode(mask, get_morph_elem())
     result = mask.astype(np.float32)
     result[eroded < result] = 0.75
-    return result                
+    return result
 
 
 @functools.lru_cache()
@@ -166,6 +171,6 @@ def list_filepaths(dirpath):
     names = os.listdir(dirpath)
     paths = [os.path.join(dirpath, name) for name in names]
     return sorted(filter(os.path.isfile, paths))
-    
+
 if __name__=='__main__':
-    demo()
+    show_examples()
