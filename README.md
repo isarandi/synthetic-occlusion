@@ -1,14 +1,10 @@
-# synthetic-occlusion
+# Synthetic Occlusion Data Augmentation
 
 In deep learning for computer vision, augmenting input images with synthetic occluders is an effective regularization method.
 
-This is the implementation we used for our IROS Workshop paper [1], and for achieving first place in the 2018 ECCV PoseTrack Challenge on 3D human pose estimation (method description and results can be found in [2]).
+This is the implementation we used for our IROS'18 workshop paper [1], and to achieve first place in the 2018 ECCV PoseTrack Challenge on 3D human pose estimation (method description and results can be found in [2]). Consider citing any of the above papers if you find the method useful in your research.
 
 Contact: sarandi@vision.rwth-aachen.de
-
-## Dependencies
-
-* Python 3, Numpy, OpenCV 3, Pillow
 
 ## Usage
 0. Make sure Python 3, Numpy, OpenCV 3 and Pillow are installed.
