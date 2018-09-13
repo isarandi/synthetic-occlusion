@@ -1,8 +1,6 @@
 # Synthetic Occlusion Data Augmentation
 
-<p align="center">
-  <img src="examples.jpg" width="350" alt="Occlusion augmented examples">
-</p>
+![Occlusion augmented examples](examples.jpg)
 
 In deep learning for computer vision, augmenting input images with synthetic occluders is an effective regularization method.
 
