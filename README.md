@@ -9,7 +9,15 @@ Contact: sarandi@vision.rwth-aachen.de
 ## Usage
 0. Make sure Python 3, Numpy, OpenCV 3 and Pillow are installed.
 1. Download and extract the Pascal VOC training/validation data from http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit
-2. Use the `SyntheticOcclusion` class as show in the `main` function.
+2. Use the `SyntheticOcclusion` class as in the `augmentation.show_examples` function. In short:
+
+```python
+
+original_im = cv2.resize(skimage.data.astronaut(), (256,256))
+
+synth_occ = SyntheticOcclusion(pascal_voc_root_path=PATH_TO_THE_EXTRACTED_VOC2012_DIR)
+occluded_im = synth_occ.augment_with_objects(original_im)
+```
 
 ## References
 
