@@ -8,25 +8,26 @@ This is the implementation we used for our IROS'18 workshop paper [1], and to ac
 
 Contact: sarandi@vision.rwth-aachen.de
 
-## Usage
-0. Make sure you have installed Python 3, the scientific Python stack, OpenCV and Pillow.
-1. Clone the repo.
-2. Download and extract the Pascal VOC training/validation data (2 GB) from http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit
-3. Test if it works.
+## Dependencies 
+You'll need Python 3, the scientific Python stack, OpenCV and Pillow to run this code.
 
-All this in terminal commands:
+## Usage
 
 ```bash
+
+# Clone this repo
 git clone https://github.com/isarandi/synthetic-occlusion.git
 cd synthetic-occlusion
 
+# Download and extract the Pascal VOC training/validation data (2 GB)
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 tar -xf VOCtrainval_11-May-2012.tar
 
+# Test if it works (after some time this should show occluded examples of the "astronaut" image, like above)
 ./augmentation.py "VOCdevkit/VOC2012"
 ```
 
-4. Use the `SyntheticOcclusion` class as follows:
+You can use the `SyntheticOcclusion` class in Python as follows:
 
 ```python 
 synth_occ = SyntheticOcclusion(pascal_voc_root_path=PATH_TO_THE_EXTRACTED_VOC2012_DIR)
