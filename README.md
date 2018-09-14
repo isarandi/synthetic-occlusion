@@ -52,7 +52,7 @@ occluded_im = synth_occ.augment_with_objects(im)
 }
 ```
 
-[2] I. Sárándi; T. Linder; K. O. Arras; B. Leibe: "[Synthetic Occlusion Augmentation with Volumetric Heatmaps for the 2018 ECCV PoseTrack Challenge on 3D Human Pose Estimation](https://arxiv.org/abs/1808.04987)" (2018) arXiv:
+[2] I. Sárándi; T. Linder; K. O. Arras; B. Leibe: "[Synthetic Occlusion Augmentation with Volumetric Heatmaps for the 2018 ECCV PoseTrack Challenge on 3D Human Pose Estimation](https://arxiv.org/abs/1808.04987)" (2018) arXiv:1808.04987
 
 ```
 @article{Sarandi18PoseTrack,
