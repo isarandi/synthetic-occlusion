@@ -27,14 +27,12 @@ tar -xf VOCtrainval_11-May-2012.tar
 ./augmentation.py "VOCdevkit/VOC2012"
 ```
 
-You can use the `SyntheticOcclusion` class in Python as follows:
+Short example code:
 
 ```python 
-synth_occ = SyntheticOcclusion(pascal_voc_root_path=PATH_TO_THE_EXTRACTED_VOC2012_DIR)
-
-# Load your image
-original_im = np.random.randint(0,255, size=(256,256,3), dtype=np.uint8)
-occluded_im = synth_occ.augment_with_objects(im)
+occluders = load_occluders(pascal_voc_path=PATH_TO_THE_VOC2012_DIR)
+example_image = cv2.resize(skimage.data.astronaut(), (256,256))
+occluded_image = occlude_with_objects(example_image, occluders)
 ```
 
 
