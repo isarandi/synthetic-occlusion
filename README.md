@@ -15,18 +15,25 @@ You'll need the scientific Python stack (with Python 3), OpenCV and Pillow to ru
 
 ## Getting Started
 
-```bash
+Clone the repo.
 
-# Clone this repo
+```bash
 git clone https://github.com/isarandi/synthetic-occlusion.git
 cd synthetic-occlusion
+```
 
-# Download and extract the Pascal VOC training/validation data (2 GB)
+Download and extract the Pascal VOC training/validation data (2 GB).
+
+```bash
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 tar -xf VOCtrainval_11-May-2012.tar
 
-# Test if it works (after some time this should show occluded examples of the "astronaut" image, like above)
-./augmentation.py "VOCdevkit/VOC2012"
+```
+
+Test if it works (after some time this should show occluded examples of the "astronaut" image, like above).
+
+```bash
+./augmentation.py VOCdevkit/VOC2012
 ```
 
 ## Example Use in Python
