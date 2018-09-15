@@ -13,7 +13,7 @@ Contact: István Sárándi <sarandi@vision.rwth-aachen.de>
 ## Dependencies 
 You'll need the scientific Python stack (with Python 3), OpenCV and Pillow to run this code.
 
-## Usage
+## Getting Started
 
 ```bash
 
@@ -29,7 +29,7 @@ tar -xf VOCtrainval_11-May-2012.tar
 ./augmentation.py "VOCdevkit/VOC2012"
 ```
 
-Short example code:
+## Example Use in Python
 
 ```python 
 occluders = load_occluders(pascal_voc_path=PATH_TO_THE_VOC2012_DIR)
