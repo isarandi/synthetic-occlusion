@@ -2,7 +2,7 @@
 
 ![Occlusion augmented examples](examples.jpg)
 
-In computer vision, synthetically augmenting input images by pasting objects onto them has been shown to improve performance across several tasks, including image classification, object detection, person re-identification, facial facial landmark localization and human pose estimation.
+In computer vision, synthetically augmenting input images by pasting objects onto them has been shown to improve performance across several tasks, including object detection, facial landmark localization and human pose estimation.
 
 This is the implementation we used in our [IROS'18 workshop paper](https://arxiv.org/abs/1808.09316) for analyzing occlusion-robustness in 3D human pose estimation, and to achieve first place in the 2018 ECCV PoseTrack Challenge on 3D human pose estimation. Method description and results for the latter can be found in our [paper on arXiv](https://arxiv.org/abs/1809.04987).
 
