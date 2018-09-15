@@ -2,14 +2,16 @@
 
 ![Occlusion augmented examples](examples.jpg)
 
-In computer vision, synthetically augmenting input images by pasting objects onto them has been shown to improve performance across several tasks, including object detection, facial landmark localization and human pose estimation.
+In computer vision, synthetically augmenting training input images by pasting objects onto them has been shown to improve performance across several tasks, including object detection, facial landmark localization and human pose estimation.
 
-This is the implementation we used in our [IROS'18 workshop paper](https://arxiv.org/abs/1808.09316) for analyzing occlusion-robustness in 3D human pose estimation, and to achieve first place in the 2018 ECCV PoseTrack Challenge on 3D human pose estimation. Method description and results for the latter can be found in our [paper on arXiv](https://arxiv.org/abs/1809.04987).
+Such pasting is also useful to evaluate a model's robustness to (synthetic) occlusions appearing on the test inputs.
+
+This is the implementation we used in our [IROS'18 workshop paper](https://arxiv.org/abs/1808.09316) to study occlusion-robustness in 3D human pose estimation, and to achieve first place in the 2018 ECCV PoseTrack Challenge on 3D human pose estimation. Method description and detailed results for the latter can be found in [our short paper on arXiv](https://arxiv.org/abs/1809.04987).
 
 Contact: István Sárándi <sarandi@vision.rwth-aachen.de>
 
 ## Dependencies 
-You'll need Python 3, the scientific Python stack, OpenCV and Pillow to run this code.
+You'll need the scientific Python stack (with Python 3), OpenCV and Pillow to run this code.
 
 ## Usage
 
