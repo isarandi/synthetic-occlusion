@@ -2,9 +2,9 @@
 
 ![Occlusion augmented examples](examples.jpg)
 
-In deep learning for computer vision, augmenting input images with synthetic occluders is an effective regularization method.
+In computer vision, synthetically augmenting input images by pasting objects onto them has been shown to improve performance across several tasks, including image classification, object detection, person re-identification, facial facial landmark localization and human pose estimation.
 
-This is the implementation we used for our IROS'18 workshop [paper](https://arxiv.org/abs/1808.09316) [1], and to achieve first place in the 2018 ECCV PoseTrack Challenge on 3D human pose estimation (method description and results can be found in our [paper on arXiv](https://arxiv.org/abs/1809.04987) [2]). Consider citing any of the above-mentioned papers if you find the method useful in your research.
+This is the implementation we used in our IROS'18 workshop [paper](https://arxiv.org/abs/1808.09316) for analyzing occlusion-robustness in 3D human pose estimation, and to achieve first place in the 2018 ECCV PoseTrack Challenge on 3D human pose estimation. Method description and results for the latter can be found in our [paper on arXiv](https://arxiv.org/abs/1809.04987).
 
 Contact: István Sárándi <sarandi@vision.rwth-aachen.de>
 
@@ -59,4 +59,5 @@ occluded_image = occlude_with_objects(example_image, occluders)
   journal={arXiv:1809.04987},
   year={2018}
 }
-```
+
+[3] N. Dvornik, J. Mairal, C. Schmid: Modeling Visual Context is Key to Augmenting Object Detection Datasets ()
