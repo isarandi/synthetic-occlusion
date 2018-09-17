@@ -49,24 +49,4 @@ occluded_image = occlude_with_objects(example_image, occluders)
 
 [1] I. Sárándi; T. Linder; K. O. Arras; B. Leibe: "[How Robust is 3D Human Pose Estimation to Occlusion?](https://arxiv.org/abs/1808.09316)" Accepted for IEEE/RSJ Int. Conference on Intelligent Robots and Systems (IROS'18) Workshops, to appear (2018) arXiv:1808.09316
 
-```
-@inproceedings{Sarandi18IROSW,
-  title = {How Robust is 3{D} Human Pose Estimation to Occlusion?},
-  author = {Istv\'an S\'ar\'andi and Timm Linder and Kai O. Arras and Bastian Leibe},
-  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) Workshops},
-  year = {2018},
-  note = {arXiv:1808.09316}
-}
-```
-
 [2] I. Sárándi; T. Linder; K. O. Arras; B. Leibe: "[Synthetic Occlusion Augmentation with Volumetric Heatmaps for the 2018 ECCV PoseTrack Challenge on 3D Human Pose Estimation](https://arxiv.org/abs/1809.04987)" (2018) arXiv:1808.04987
-
-```
-@article{Sarandi18PoseTrack,
-  title = {Synthetic Occlusion Augmentation with Volumetric Heatmaps for the 2018 {ECCV} {P}ose{T}rack {C}hallenge on 3{D} Human Pose Estimation},
-  author = {Istv\'an S\'ar\'andi and Timm Linder and Kai O. Arras and Bastian Leibe},
-  journal={arXiv:1809.04987},
-  year={2018}
-}
-
-[3] N. Dvornik, J. Mairal, C. Schmid: Modeling Visual Context is Key to Augmenting Object Detection Datasets ()
