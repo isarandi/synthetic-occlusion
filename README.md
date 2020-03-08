@@ -47,6 +47,6 @@ occluded_image = occlude_with_objects(example_image, occluders)
 
 ## References
 
-[1] I. Sárándi; T. Linder; K. O. Arras; B. Leibe: "[How Robust is 3D Human Pose Estimation to Occlusion?](https://arxiv.org/abs/1808.09316)" Accepted for IEEE/RSJ Int. Conference on Intelligent Robots and Systems (IROS'18) Workshops, to appear (2018) arXiv:1808.09316
+[1] I. Sárándi; T. Linder; K. O. Arras; B. Leibe: "[How Robust is 3D Human Pose Estimation to Occlusion?](https://arxiv.org/abs/1808.09316)" in IEEE/RSJ Int. Conference on Intelligent Robots and Systems (IROS'18) Workshops (2018) arXiv:1808.09316
 
 [2] I. Sárándi; T. Linder; K. O. Arras; B. Leibe: "[Synthetic Occlusion Augmentation with Volumetric Heatmaps for the 2018 ECCV PoseTrack Challenge on 3D Human Pose Estimation](https://arxiv.org/abs/1809.04987)" (extended abstract) ECCV Workshops (2018) arXiv:1809.04987
